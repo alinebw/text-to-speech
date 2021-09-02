@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Voice</title>
+  <link rel="stylesheet" type="text/css" href="/public/style.css">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+</head>
+<body>
+  <header class="container-fluid">
+    <navbar></navbar>
+    <h1>Conversor Texto para Áudio</h1>
+  </header>
+  <section class="container section-one">
+    <form>
+      <h3>Comentário</h3>
+        <textarea id="txtcontent" name="txtcontent" rows="20" cols="40">
+          Digite seu texto aqui e clique no botão para salvar.
+        </textarea>
+      <button id="submit" action="Submit">Cadastrar</button>    
+    </form>  
+  </section>
+
+  <section class="container section-two">
+    <h3>Comentários cadastrados:</h3>
+    <div data-spy="scroll" class="coments" data-offset="0">
+    </div>
+    <audio id="audio">
+      <source id="source" src="" type="audio/wav">
+    </audio>
+  </section>
+
+ <footer>
+   <div class="container footer-copyright">
+     <p>Todos os direitos reservados&copy;</p>
+     <p>Aline Branco</p>
+   </div>
+ </footer> 
+</body>
+
+</html>
