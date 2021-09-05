@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
   port: '3306',
   user: process.env.BD_USER,
   password: process.env.BD_PASSWORD,
-  database: 'text-to-speech'
+  database: 'text_to_speech'
 });
 
 module.exports = connection;

@@ -52,6 +52,7 @@ h1 {
 }
 
 .section-two {
+  margin: 0px 0px 0px 90px;
   padding: 20px;
   height: 100%;
   
@@ -64,4 +65,8 @@ h1 {
   color: white;
   justify-content: center;
   text-align: center;
+  font-size: 10px;
+}
+.footer-text {
+  margin-bottom: 5px;
 }

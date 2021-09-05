@@ -1,5 +1,8 @@
 const Comentario = require('../models/comentarios');
 const { join } = require('path');
+const { Router } = require('express');
+
+const router = Router();
 
 
 module.exports = app => {
@@ -10,7 +13,5 @@ module.exports = app => {
     const comentario = req.body
 
     Comentario.adiciona(comentario, res)
-    
-    res.send('Post Comentario')
   })
 };
