@@ -5,37 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart Voice</title>
-  <link rel="stylesheet" type="text/css" href="/public/style.css">
+  <link rel="stylesheet" href="/style.css">
   <link rel="shortcut icon" href="/assets/favicon.ico">
 </head>
 <body>
-  <header class="container-fluid">
-    <navbar></navbar>
+  <header id="header">
     <h1>Conversor Texto para Áudio</h1>
   </header>
-  <section class="container section-one">
-    <form>
-      <h3>Comentário</h3>
-        <textarea id="txtcontent" name="txtcontent" rows="20" cols="40">
-          Digite seu texto aqui e clique no botão para salvar.
-        </textarea>
-      <button id="submit" action="Submit">Cadastrar</button>    
-    </form>  
-  </section>
+  <main class="container">
+    <section class="section-one">
+      <form class="form" method="post" action="/home">
+        <h3 class="form-label">Digite seu texto e clique no botão para salvar</h3>
+          <textarea id="txtcontent" name="text"></textarea>
+        <button id="submit" onclick="">Cadastrar</button>    
+      </form>  
+    </section>
 
-  <section class="container section-two">
-    <h3>Comentários cadastrados:</h3>
-    <div data-spy="scroll" class="coments" data-offset="0">
-    </div>
-    <audio id="audio">
-      <source id="source" src="" type="audio/wav">
-    </audio>
-  </section>
-
- <footer>
-   <div class="container footer-copyright">
-     <p>Todos os direitos reservados&copy;</p>
-     <p>Aline Branco</p>
+    <section class="section-two">
+      <h3 class="form-label">Comentários cadastrados:</h3>
+      <audio src=""></audio>
+    </section>
+  </main>
+ <footer class="footer">
+   <div>
+     <p class="footer-text">Todos os direitos reservados&copy;</p>
+     <p class="footer-text">Aline Branco</p>
    </div>
  </footer> 
 </body>

@@ -1,9 +1,9 @@
-const Comentario = require('../models/comentarios')
+const Comentario = require('../models/comentarios');
+const { join } = require('path');
 
 
 module.exports = app => {
-  app.get('/home', (req, res) => 
-  res.send('você está na rota do conversor e está realizando um GET'))
+  app.get('/home', (req, res) => res.sendFile(join(__dirname, '..', 'public', '/index.html')))
 
   app.post('/home', (req, res) => {
 

@@ -1,11 +1,11 @@
-const connection = require ('../infrastructure/connection')
+const connection = require ('../infrastructure/connection');
 
 class Comentario {
-  adiciona(coment, res) {
+  adiciona(comentario, res) {
 
     const sql = 'INSERT INTO Comentarios SET ?'
 
-    connection.query(sql, coment, (erro, resultados) => {
+    connection.query(sql, comentario, (erro, resultados) => {
       if(erro) {
         res.json(erro)
       } else {
