@@ -12,16 +12,24 @@ Para realizar a conversão do comentário de texto para áudio, o candidato deve
  
  ### Instalação:
  
+```sh
  - git clone git@github.com:alinebw/text-to-speech.git
  
  - cd text-to-speech
  
  - npm install
- 
+```
+
  ### Configuração:
  
+```sh
+
+```
+
  ### Inicialização:
- 
+
+```sh
  - npm start
- 
+
  - No seu browser favorito, digite localhost:3000/home e a aplicação está pronta para ser usada.
+```
