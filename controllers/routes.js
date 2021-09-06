@@ -10,10 +10,12 @@ module.exports = app => {
 
     const comentario = req.body
 
-    Comentario.adiciona(comentario, res)
+    Comentario.adiciona(comentario, res) 
+    
   })
 
   app.get('/home', (req, res) => {
+
     Comentario.lista(res)
   })
 

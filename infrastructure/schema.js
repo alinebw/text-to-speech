@@ -5,7 +5,7 @@ class Tabelas {
     this.criarComentarios() //executa criação de tabela
   }
   criarComentarios() {
-    const sql = 'CREATE TABLE IF NOT EXISTS Comentarios (id int NOT NULL, coment varchar (254) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at DATETIME DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (id))'
+    const sql = 'CREATE TABLE IF NOT EXISTS Comentarios (coment varchar (254) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at DATETIME DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (id))'
 
     this.connection.query(sql, erro => {
       if(erro) {
