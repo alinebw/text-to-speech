@@ -23,7 +23,16 @@ Para realizar a conversão do comentário de texto para áudio, o candidato deve
  ### Configuração:
  
 ```sh
+- Acesse https://www.ibm.com/cloud/watson-text-to-speech e crie uma conta gratuita
+- Selecione no catálogo Text to Speech, clique em criar e salve suas credenciais (API KEY e URL)
+- Crie o banco de dados no seu mysql: CREATE DATABASE text_to_speech / USE text_to_speech
+- Na pasta do projeto no VS Code, crie um arquivo .env e insira as variáveis de ambiente da seguinte forma:
 
+BD_USER=seu usuário
+BD_PASSWORD=sua senha
+
+TEXT_TO_SPEECH_APIKEY=API KEY salva
+TEXT_TO_SPEECH_URL=URL salva
 ```
 
  ### Inicialização:
