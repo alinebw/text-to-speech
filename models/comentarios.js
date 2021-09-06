@@ -9,15 +9,15 @@ class Comentario {
       if(erro) {
         res.status(400).json(erro)
       } else {
-        res.status(200).json({...comentario})
+        res.status(200).json({ ...comentario })
       }
     })
   }
 
-  lista(res) {
-    const sql = 'SELECT * FROM Comentarios'
+  lista(comentario, res) {
+    const sql = 'SELECT coment FROM Comentarios'
 
-    conexao.query(sql, (erro, resultados) => {
+    conexao.query(sql, comentario, (erro, resultados) => {
         if (erro) {
             res.status(400).json(erro)
         } else {
@@ -25,6 +25,31 @@ class Comentario {
         }
     })
   }
+
+  altera(comentario, res) {
+    
+    const sql = 'UPDATE Comentarios SET ? WHERE coment=?'
+
+    conexao.query(sql, comentario, (erro, resultados) => {
+        if (erro) {
+            res.status(400).json(erro)
+        } else {
+            res.status(200).json({ ...comentario })
+        }
+    })
+}
+
+  deleta(comentario, res) {
+  const sql = 'DELETE FROM COmentarios WHERE coment=?'
+
+  conexao.query(sql, comentario, (erro, resultados) => {
+      if (erro) {
+          res.status(400).json(erro)
+      } else {
+          res.status(200).json({ ...comentario })
+      }
+  })
+}
 }
 
 
