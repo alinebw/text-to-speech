@@ -1,3 +1,5 @@
+const connection = require ('./connection');
+
 class Tabelas {
   init(connection) {
     this.connection = connection //executa conexão

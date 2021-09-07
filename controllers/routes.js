@@ -4,7 +4,7 @@ const { join } = require('path');
 
 
 module.exports = app => {
-  app.get('/home', (req, res) => res.sendFile(join(__dirname, '..', 'public', '/index.html')))
+  app.get('/', (req, res) => res.sendFile(join(__dirname, '..', 'public', '/index.html')))
 
   app.post('/home', (req, res) => {
 
@@ -13,10 +13,10 @@ module.exports = app => {
     Comentario.adiciona(comentario, res) 
     
   })
-
+  
   app.get('/home', (req, res) => {
 
-    Comentario.lista(res)
+    Comentario.lista(res, comentario)
   })
 
 };

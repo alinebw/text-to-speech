@@ -17,7 +17,7 @@ class Comentario {
   lista(comentario, res) {
     const sql = 'SELECT coment FROM Comentarios'
 
-    connection.query(sql, comentario, (erro, resultados) => {
+    connection.query(sql, comentario,(erro, resultados) => {
         if (erro) {
             res.status(400).json(erro)
         } else {
@@ -30,7 +30,7 @@ class Comentario {
     
     const sql = 'UPDATE Comentarios SET ? WHERE coment=?'
 
-    connection.query(sql, comentario, (erro, resultados) => {
+    connection.query(sql, comentario, (erro, res) => {
         if (erro) {
             res.status(400).json(erro)
         } else {
@@ -40,7 +40,7 @@ class Comentario {
 }
 
   deleta(comentario, res) {
-  const sql = 'DELETE FROM COmentarios WHERE coment=?'
+  const sql = 'DELETE FROM Comentarios WHERE coment=?'
 
   connection.query(sql, comentario, (erro, resultados) => {
       if (erro) {
