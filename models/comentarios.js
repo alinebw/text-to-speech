@@ -1,23 +1,17 @@
 const connection = require ('../infrastructure/connection');
 
 class Comentario {
-  adiciona(comentario, res) {
+  adiciona(comentario) {
 
     const sql = 'INSERT INTO Comentarios SET ?'
 
-    connection.query(sql, comentario, (erro, resultados) => {
-      if(erro) {
-        res.status(400).json(erro)
-      } else {
-        res.status(200).json({ ...comentario })
-      }
-    })
+    connection.query(sql, comentario)
   }
 
-  lista(comentario, res) {
+  lista(res) {
     const sql = 'SELECT coment FROM Comentarios'
 
-    connection.query(sql, comentario,(erro, resultados) => {
+    connection.query(sql, (erro, resultados) => {
         if (erro) {
             res.status(400).json(erro)
         } else {
@@ -26,8 +20,7 @@ class Comentario {
     })
   }
 
-  altera(comentario, res) {
-    
+  altera(comentario, res) {    
     const sql = 'UPDATE Comentarios SET ? WHERE coment=?'
 
     connection.query(sql, comentario, (erro, res) => {

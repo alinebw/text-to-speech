@@ -17,12 +17,12 @@
       <form class="form" name="form" method="post" action="/home">
         <h3 class="form-label">Comentário</h3>
           <textarea id="txtcontent" name="coment"></textarea>
-        <button id="submit" onclick="document.getElementById('txtcontent')">Cadastrar</button>    
+        <button id="submit" onclick = "handleClick()">Cadastrar</button>    
       </form>  
     </section>
 
     <section class="section-two">
-      <h3 class="form-label">Comentários cadastrados:</h3>
+      <h3 class="form-label" id="coment">Comentários cadastrados:</h3>
       <audio src=""></audio>
     </section>
   </main>
@@ -32,6 +32,39 @@
      <p class="footer-text">Aline Branco</p>
    </div>
  </footer> 
+ <script>
+
+  
+  let h3Coments = document.getElementById('coment');
+  let all = [];
+
+  const removeAll = () => {
+    h3Coments.innerHTML = ('<h3 class="form-label" id="coment">Comentários cadastrados:</h3>')
+  };
+
+  let lista;
+  let text;
+
+  const renderList = async () => { 
+    console.log('txt')
+    removeAll();
+    arrComents = all.map(item => item.coment);
+    for (let i = 0 ; i < arrComents.length ; i++){
+    text = document.createTextNode(arrComents[i]);
+    lista = document.createElement("LI");
+    lista.appendChild(text);
+    h3Coments.appendChild(lista);
+    }
+}
+  const getComents = async () => {
+  all = await fetch ('http://localhost:3000/home').then(response => response.json())
+  renderList();
+};
+
+  const handleClick = () => {
+    setTimeout( () => getComents(), 1000)
+  }
+</script>
 </body>
 
 </html>
