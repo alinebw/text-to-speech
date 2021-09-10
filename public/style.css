@@ -18,30 +18,30 @@ h1 {
 }
 
 .container {
-  display:flex;
-  padding: 100px;
+  display: flex;
+  justify-content: space-around;
   
 }
 
 .section-one {
-  
+  width: 100vh;
   height: 100%;
   text-align: center; 
 }
+
 .form {
   padding: 20px;
-
 }
 
-.form-label {
+.form-label {  
   margin-bottom: 20px;
-  font-size: 12px;
-  
+  font-size: 12px;  
 }
 
 #txtcontent {
   text-align: center;
-  
+  width: 200px;
+  height: 200px;
 }
 
 #submit {
@@ -52,21 +52,22 @@ h1 {
 }
 
 .section-two {
-  margin: 0px 0px 0px 90px;
-  padding: 20px;
+  width: 100vh;
   height: 100%;
+  text-align: center;
   
 }
 
 .footer {
-  padding: 11px;
   display: flex;
+  justify-content: center;
+  align-items: flex-end;
   background-color: #00008b;
   color: white;
-  justify-content: center;
   text-align: center;
   font-size: 10px;
 }
-.footer-text {
-  margin-bottom: 5px;
+
+.footer-text {  
+  margin: 5px auto;
 }
