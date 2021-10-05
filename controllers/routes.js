@@ -1,5 +1,6 @@
 const Comentario = require('../models/comentarios');
 const { join } = require('path');
+const synthesizeAudio = require('../utils/watsonAPI');
 
 
 
@@ -19,4 +20,10 @@ module.exports = app => {
     Comentario.lista(res)
   })
 
+  app.post('/home', (req, res) => {
+
+    
+  })
+
 };
+

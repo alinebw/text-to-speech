@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart Voice</title>
   <link rel="stylesheet" href="/style.css">
-  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <link rel="icon" href="/assets/favicon.ico">
 </head>
 <body>
   <header id="header">
@@ -22,12 +22,10 @@
     </section>
 
     <section class="section-two">
-      <form class="form" method="get" action="/home">
-        <h3 class="form-label" id="coment">Comentários cadastrados:</h3>
-        <ul>
-        </ul>
+       <h3 class="form-label">Comentários cadastrados:</h3>
+       <div class="form" id="coment" name="newComent" method="get" action="/home">
         <audio src=""></audio>
-      </form>
+      </div>
     </section>
     </main>
 
@@ -36,33 +34,32 @@
      <p class="footer-text">Todos os direitos reservados&copy;</p>
      <p class="footer-text">Aline Branco</p>
    </div>
- </footer> 
- <script>
+ </footer>  
 
-  
-  let h3Coments = document.getElementById('coment');
-  let all = [];
+<script>
+ let divComents = document.getElementById('coment');
+ let all = [];
 
   const removeAll = () => {
-    h3Coments.innerHTML = ('<h3 class="form-label" id="coment">Comentários cadastrados:</h3>')
+    divComents.innerHTML = ('<div class="form" id="coment" name="newComent"></div>')
   };
 
   let lista;
   let text;
 
   const renderList = async () => { 
-    console.log('txt')
-    removeAll();
+   removeAll();
     arrComents = all.map(item => item.coment);
     for (let i = 0 ; i < arrComents.length ; i++){
     text = document.createTextNode(arrComents[i]);
     lista = document.createElement("LI");
     lista.appendChild(text);
-    h3Coments.appendChild(lista);
+    divComents.appendChild(lista);
     }
 }
+
   const getComents = async () => {
-  all = await fetch ('http://localhost:3000/home').then(response => response.json())
+  all = await fetch ('http://localhost:3000/home').then (res => res.json())
   renderList();
 };
 
@@ -70,6 +67,7 @@
     setTimeout( () => getComents(), 1000)
   }
 </script>
+  
 </body>
 
 </html>

@@ -29,12 +29,8 @@ h1 {
   text-align: center; 
 }
 
-.form {
-  padding: 20px;
-}
-
 .form-label {  
-  margin-bottom: 20px;
+  padding: 20px;
   font-size: 12px;  
 }
 
